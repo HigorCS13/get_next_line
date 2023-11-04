@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:38:48 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/11/04 10:18:17 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/04 16:39:56 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdarg.h>
-# include <stdio.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -29,5 +28,7 @@ typedef struct s_list
 }	t_list;
 
 char	*get_next_line(int fd);
+int		len_to_newline(t_list *list);
+void	copy_str(t_list *list, char *str);
 
 #endif
