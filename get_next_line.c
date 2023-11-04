@@ -6,7 +6,14 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:56:07 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/10/31 11:56:08 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/04 10:14:06 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
+
+char	*get_next_line(int fd)
+{
+	
+}
 
