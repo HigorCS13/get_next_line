@@ -6,12 +6,12 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:38:48 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/11/04 16:39:56 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/04 23:14:02 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
@@ -30,5 +30,8 @@ typedef struct s_list
 char	*get_next_line(int fd);
 int		len_to_newline(t_list *list);
 void	copy_str(t_list *list, char *str);
+void	dealloc(t_list **list, t_list *clean_node, char *buff);
+int		found_newline(t_list *list);
+t_list	*find_last_node(t_list *list);
 
 #endif

@@ -6,34 +6,11 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:56:07 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/11/04 17:55:23 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/04 23:19:03 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-static void dealloc(t_list **list, t_list *clean_node, char *buff)
-{
-	t_list	*tmp;
-
-	if (!*list)
-		return ;
-	while (*list)
-	{
-		tmp = (*list)->next;
-		free((*list)->str_buf);
-		free(*list);
-		*list = tmp;
-	}
-	*list = NULL;
-	if (clean_node->str_buf[0])
-		*list = tmp;
-	else
-	{
-		free(buff);
-		free(clean_node);
-	}
-}
 
 static void	polish_list(t_list *list)
 {
@@ -47,7 +24,7 @@ static void	polish_list(t_list *list)
 	clean_node = malloc(sizeof(t_list));
 	if (!buff || !clean_node)
 		return ;
-	last_node = find_last_node(*list);
+	last_node = find_last_node(list);
 	i = 0;
 	k = 0;
 	while (last_node->str_buf[i] != '\0' && last_node->str_buf[i] != '\n')
@@ -57,7 +34,7 @@ static void	polish_list(t_list *list)
 	buff[k] = '\0';
 	clean_node->str_buf = buff;
 	clean_node->next = NULL;
-	dealloc(list, clean_node, buff);
+	dealloc(&list, clean_node, buff);
 }
 
 static char	*get_line(t_list *list)
@@ -111,7 +88,7 @@ static void	create_list(t_list **list, int fd)
 		buff[char_read] = '\0';
 		append(list, buff);
 	}
-}	
+}
 
 char	*get_next_line(int fd)
 {
@@ -119,13 +96,13 @@ char	*get_next_line(int fd)
 	char			*next_line;
 
 	list = NULL;
-	if (fd <0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0) < 0)
 		return (NULL);
 	create_list(&list, fd);
 	if (list == NULL)
 		return (NULL);
 	next_line = get_line(list);
-	polish_list(&list);
+	polish_list(list);
 	return (next_line);
 }
 
