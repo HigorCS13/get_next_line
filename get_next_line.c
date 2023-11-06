@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:56:07 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/11/04 23:19:03 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:50:49 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ static char	*get_line(t_list *list)
 	str_len = len_to_newline(list);
 	next_str = malloc(str_len + 1);
 	if (!next_str)
+	{
+		free(next_str);
 		return (NULL);
+	}
 	copy_str(list, next_str);
 	return (next_str);
 }

@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:56:03 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/11/04 23:17:43 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:45:34 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,6 @@ void	dealloc(t_list **list, t_list *clean_node, char *buff)
 	*list = NULL;
 	if (clean_node->str_buf[0])
 		*list = tmp;
-	else
-	{
-		free(buff);
-		free(clean_node);
-	}
+	free(buff);
+	free(clean_node);
 }
