@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:38:48 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/11/04 23:14:02 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/07 20:50:48 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
 
 typedef struct s_list
 {

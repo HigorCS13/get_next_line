@@ -6,7 +6,7 @@
 /*   By: hicunha- <hicunha-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:56:07 by hicunha-          #+#    #+#             */
-/*   Updated: 2023/11/06 20:35:08 by hicunha-         ###   ########.fr       */
+/*   Updated: 2023/11/07 20:50:57 by hicunha-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ char	*get_next_line(int fd)
 }
 
 /*#include <stdio.h>
+#include <fcntl.h>
 
 int	main()
 {
@@ -117,9 +118,7 @@ int	main()
 	lines = 1;
 	fd = open("lorem_ipsum.txt", O_RDONLY);
 	while ((line = get_next_line(fd)))
-	{
 		printf("%d->%s\n", lines++, line);
-		free(line);
-	}
+
 	return (0);
 }*/
