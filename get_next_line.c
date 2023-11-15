@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*process_line(char *new_line, char *buff, int buffer_size, 
+char	*process_line(char *new_line, char *buff, int buffer_size,
 	int *line_length)
 {
 	char	*line;
@@ -61,7 +61,7 @@ char	*read_buffer(int fd, char buff[FOPEN_MAX][BUFFER_SIZE + 1], int *sz_bf)
 		{
 			*sz_bf = 0;
 			while (buff[fd][*sz_bf] && buff[fd][*sz_bf] != '\n')
-				(*sz_bf)++;
+				++*sz_bf;
 			flag = (flag == *sz_bf);
 			*sz_bf += buff[fd][*sz_bf] == '\n';
 			line = process_line(line, buff[fd], *sz_bf, &size_line);

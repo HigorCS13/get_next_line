@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*process_line(char *new_line, char *buff, int buffer_size, 
+char	*process_line(char *new_line, char *buff, int buffer_size,
 	int *line_length)
 {
 	char	*line;
