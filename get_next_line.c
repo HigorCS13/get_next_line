@@ -42,7 +42,7 @@ char	*process_line(char *new_line, char *buff, int buffer_size,
 	return (new_line);
 }
 
-char	*read_buffer(int fd, char buff[FOPEN_MAX][BUFFER_SIZE + 1], int *sz_bf)
+char	*read_buffer(int fd, char buff[][BUFFER_SIZE + 1], int *sz_bf)
 {
 	auto int flag = 1;
 	auto int size_line = 0;
