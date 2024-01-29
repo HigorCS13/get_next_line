@@ -12,7 +12,6 @@
 
 #include "get_next_line.h"
 
-// isso é um comentário
 char	*process_line(char *new_line, char *buff, int buffer_size,
 	int *line_length)
 {
